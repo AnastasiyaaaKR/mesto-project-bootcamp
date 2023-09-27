@@ -1,10 +1,12 @@
 .gallery__header {
-  height: 23px;
   color: #000;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  margin: 25px 0 31px 21px
+  margin: 25px 0 31px 21px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
