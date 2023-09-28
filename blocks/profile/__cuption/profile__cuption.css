@@ -9,8 +9,29 @@
   padding: 0;
 }
 
+@media screen and (min-width: 1280px) {
+  .profile__cuption {
+    font-size: 18px;
+    max-width: 336px;
+    height: 18px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .profile__cuption {
     font-size: 1.8vw;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .profile__cuption {
+    font-size: 2.30769vw;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .profile__cuption {
+    margin: 0 auto 36px;
+    font-size: 14px;
   }
 }

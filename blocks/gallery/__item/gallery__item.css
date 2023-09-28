@@ -1,5 +1,7 @@
 .gallery__item {
+  width: 100%;
   max-width: 22.03125vw;
+  max-height: 361px;
   border-radius: 10px;
   background-color: #FFF;
 }

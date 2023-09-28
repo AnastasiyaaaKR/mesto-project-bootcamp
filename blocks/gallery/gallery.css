@@ -10,3 +10,9 @@
       grid-template-columns: repeat(2, auto);
     }
 }
+
+@media screen and (max-width: 560px) {
+  .gallery {
+    grid-template-columns: repeat(1, auto);
+  }
+}

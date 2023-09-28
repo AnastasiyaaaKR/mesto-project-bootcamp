@@ -7,70 +7,80 @@
   <title>Mesto</title>
 </head>
 <body class="body">
-  <header class="header">
-    <img src="./images/logo.svg" alt="Логитип место" class="header__logo">
-  </header>
-  <main class="main">
-    <section class="profile">
-      <div class="profile__info">
-        <img src="./images/profile__image.jpg" alt="Аватарка" class="profile__img">
-        <div class="profile__about">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <p class="profile__cuption">Исследователь океана</p>
+  <div class="wrapper">
+    <header class="header">
+      <img src="./images/logo.svg" alt="Логитип место" class="header__logo">
+    </header>
+    <main class="main">
+      <section class="profile">
+        <div class="profile__info">
+          <img src="./images/profile__image.jpg" alt="Аватарка" class="profile__img">
+          <div class="profile__about">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <p class="profile__cuption">Исследователь океана</p>
+          </div>
+          <button class="profile__edit"></button>
         </div>
-        <button class="profile__edit"></button>
-      </div>
-      <button class="profile_add"></button>
+        <button class="profile_add"></button>
+      </section>
+      <section class="gallery">
+        <div class="gallery__item">
+          <img src="./images/Karachaevsk.jpg" alt="Карачаевск" class="gallery__image">
+          <div class="gallery__description">
+            <h2 class="gallery__header">Карачаевск</h2>
+            <button class="gallery__button"></button>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="./images/Elbrus.png" alt="Гора Эльбрус" class="gallery__image">
+          <div class="gallery__description">
+            <h2 class="gallery__header">Гора Эльбрус</h2>
+            <button class="gallery__button"></button>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="./images/Dombai.png" alt="Домбай" class="gallery__image">
+          <div class="gallery__description">
+            <h2 class="gallery__header">Домбай</h2>
+            <button class="gallery__button"></button>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="./images/Elbrus.png" alt="Гора Эльбрус" class="gallery__image">
+          <div class="gallery__description">
+            <h2 class="gallery__header">Гора Эльбрус</h2>
+            <button class="gallery__button"></button>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="./images/Dombai.png" alt="Домбай" class="gallery__image">
+          <div class="gallery__description">
+            <h2 class="gallery__header">Домбай</h2>
+            <button class="gallery__button"></button>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="./images/Karachaevsk.jpg" alt="Карачаево Черкессия" class="gallery__image">
+          <div class="gallery__description">
+            <h2 class="gallery__header">Карачаево Черкессия</h2>
+            <button class="gallery__button"></button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">
+        &copy; 2023 Mesto Russia
+      </p>
+    </footer>
+    <section class="popup">
+      <form class="popup__container" action="">
+       <h2 class="popup__header">Редактировать профиль</h2>
+       <input class="popup__text" required type="text" placeholder="Жак-Ив Кусто">
+       <input class="popup__text" required type="text" placeholder="Исследователь океана">
+       <button class="popup__button">Сохранить</button>
+      </form>
     </section>
-    <section class="gallery">
-      <div class="gallery__item">
-        <img src="./images/Karachaevsk.jpg" alt="Карачаевск" class="gallery__image">
-        <div class="gallery__description">
-          <h2 class="gallery__header">Карачаевск</h2>
-          <button class="gallery__button"></button>
-        </div>
-      </div>
-      <div class="gallery__item">
-        <img src="./images/Elbrus.png" alt="Гора Эльбрус" class="gallery__image">
-        <div class="gallery__description">
-          <h2 class="gallery__header">Гора Эльбрус</h2>
-          <button class="gallery__button"></button>
-        </div>
-      </div>
-      <div class="gallery__item">
-        <img src="./images/Dombai.png" alt="Домбай" class="gallery__image">
-        <div class="gallery__description">
-          <h2 class="gallery__header">Домбай</h2>
-          <button class="gallery__button"></button>
-        </div>
-      </div>
-      <div class="gallery__item">
-        <img src="./images/Elbrus.png" alt="Гора Эльбрус" class="gallery__image">
-        <div class="gallery__description">
-          <h2 class="gallery__header">Гора Эльбрус</h2>
-          <button class="gallery__button"></button>
-        </div>
-      </div>
-      <div class="gallery__item">
-        <img src="./images/Dombai.png" alt="Домбай" class="gallery__image">
-        <div class="gallery__description">
-          <h2 class="gallery__header">Домбай</h2>
-          <button class="gallery__button"></button>
-        </div>
-      </div>
-      <div class="gallery__item">
-        <img src="./images/Karachaevsk.jpg" alt="Карачаево Черкессия" class="gallery__image">
-        <div class="gallery__description">
-          <h2 class="gallery__header">Карачаево Черкессия</h2>
-          <button class="gallery__button"></button>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <p class="footer__copyright">
-      &copy; 2023 Mesto Russia
-    </p>
-  </footer>
+  </div>
 </body>
 </html>

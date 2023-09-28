@@ -2,7 +2,7 @@
   display: block;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  max-width: 22.03125vw;
+  width: 100%;
   background-size: cover;
 }
 

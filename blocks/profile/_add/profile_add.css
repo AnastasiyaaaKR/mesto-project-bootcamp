@@ -1,23 +1,40 @@
 .profile_add {
-  width: 150px;
+  width: 100%;
+  max-width: 11.7187vw;
   height: 50px;
   padding: 0;
   border: none;
   margin: 75px 0 0;
   cursor: pointer;
-  background-image: url(../../../images/Add\ Button.svg);
+  background-color: #000;
+  background-image: url(../../../images/Add_Button.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .profile_add:hover {
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1280px) {
   .profile_add {
-    
+    max-width: 150px;
+    height: 50px;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .profile_add {
+    max-width: 13vw;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .profile_add {
+    max-width: 12.8205vw;
+  }
+}
+
+
 
 

@@ -1,11 +1,5 @@
 .body {
-  margin: 0 15.625vw 0;
+  margin: 0 auto;
+  padding: 0;
   background-color: #000;
-}
-
-@media screen and (max-width: 1000px) {
-  .body {
-      margin-left: 9vw;
-      margin-right: 9vw;
-    }
 }

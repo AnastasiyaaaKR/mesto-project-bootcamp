@@ -1,0 +1,31 @@
+.wrapper {
+  margin: 0 15.625vw 0;
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    margin-left: 9vw;
+    margin-right: 9vw;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .wrapper {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .wrapper {
+    margin-left: 5.9375vw;
+    margin-right: 5.9375vw;
+  }
+}

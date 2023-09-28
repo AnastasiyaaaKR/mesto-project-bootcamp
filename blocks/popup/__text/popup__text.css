@@ -1,0 +1,17 @@
+.popup__text {
+  display: block;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(0,0,0, 0.2);
+  margin: 0 0 30px 36px;
+  padding-bottom: 13px;
+}
+
+.popup__text::placeholder {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
