@@ -1,5 +1,11 @@
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 22.03125vw);
   gap: 17px 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .gallery {
+      grid-template-columns: repeat(2, 38vw);
+    }
 }
