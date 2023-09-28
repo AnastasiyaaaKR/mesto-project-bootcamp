@@ -2,5 +2,12 @@
   display: block;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  max-width: 100%;
+  max-width: 22.03125vw;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1000px) {
+  .gallery__image {
+    max-width: 28.2vw;
+  }
 }

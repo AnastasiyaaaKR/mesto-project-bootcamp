@@ -1,10 +1,16 @@
 .profile__cuption {
   color: #FFF;
   font-family: Inter;
-  font-size: 18px;
+  font-size: 1.40625vw;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .profile__cuption {
+    font-size: 1.8vw;
+  }
 }
