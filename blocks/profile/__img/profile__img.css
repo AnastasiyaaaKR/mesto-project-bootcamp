@@ -7,7 +7,7 @@
   padding: 3.8px 2.03125vw 3.8px 1.7968vw;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
   .profile__img {
     margin: 38.25px auto 22.25px;
   }

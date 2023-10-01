@@ -3,13 +3,15 @@
   max-width: 11.7187vw;
   height: 50px;
   padding: 0;
-  border: none;
+  border-radius: 2px;
+  border: 2px solid #FFF;
   margin: 75px 0 0;
   cursor: pointer;
   background-color: #000;
   background-image: url(../../../images/Add_Button.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: center;
+  background-size: 20%;
 }
 
 .profile_add:hover {
@@ -18,22 +20,22 @@
 
 @media screen and (min-width: 1280px) {
   .profile_add {
-    max-width: 150px;
-    height: 50px;
+    width: 150px;
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
   .profile_add {
-    max-width: 13vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 36px auto;
+    background-size: 16px;
   }
 }
 
-@media screen and (max-width: 780px) {
-  .profile_add {
-    max-width: 12.8205vw;
-  }
-}
+
 
 
 

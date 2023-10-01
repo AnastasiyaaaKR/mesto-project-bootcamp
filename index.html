@@ -16,10 +16,14 @@
         <div class="profile__info">
           <img src="./images/profile__image.jpg" alt="Аватарка" class="profile__img">
           <div class="profile__about">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <p class="profile__cuption">Исследователь океана</p>
+            <div>
+              <div class="profile__name-wrapper">
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <button class="profile__edit"></button>
+              </div>
+              <p class="profile__cuption">Исследователь океана</p>
+            </div>
           </div>
-          <button class="profile__edit"></button>
         </div>
         <button class="profile_add"></button>
       </section>
@@ -74,7 +78,8 @@
       </p>
     </footer>
     <section class="popup">
-      <form class="popup__container" action="">
+      <form class="popup__container" action="#">
+       <button class="popup__close"></button>
        <h2 class="popup__header">Редактировать профиль</h2>
        <input class="popup__text" required type="text" placeholder="Жак-Ив Кусто">
        <input class="popup__text" required type="text" placeholder="Исследователь океана">

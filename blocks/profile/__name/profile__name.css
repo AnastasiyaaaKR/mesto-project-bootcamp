@@ -1,11 +1,11 @@
 .profile__name {
   color: #FFF;
   font-family: Inter;
-  font-size: 3.28125vw;
+  font-size: 42px;
   font-style: normal;
   font-weight: 500;
   line-height: 48px;
-  margin: 62px 18px 16px 0;
+  margin: 0 18px 0 0;
   padding: 0;
 }
 
@@ -19,19 +19,18 @@
 
 @media screen and (max-width: 1000px) {
   .profile__name {
-    font-size: 4.2vw;
+    font-size: 38px;
   }
 }
 
 @media screen and (max-width: 780px) {
   .profile__name {
-    font-size: 5vw;
+    font-size: 27px;;
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
   .profile__name {
-    font-size: 27px;
-    margin: 0 auto 14px;
+    margin: 0 10 14px 65px;
   }
 }

@@ -1,0 +1,12 @@
+.popup__close{
+  background-image: url(../../../images/Close_Icon.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: calc(100% + 8px);
+  bottom: calc(100% + 8px);
+}

@@ -1,18 +1,24 @@
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 17px 20px;
   box-sizing: border-box;
 }
 
+@media screen and (min-width: 1280px) {
+  .gallery {
+    max-width: 880px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .gallery {
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media screen and (max-width: 560px) {
   .gallery {
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
