@@ -1,0 +1,14 @@
+.gallery__trash {
+  max-width: 18px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.gallery__trash:hover {
+  opacity: 0.6;
+}

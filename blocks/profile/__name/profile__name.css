@@ -1,6 +1,6 @@
 .profile__name {
   color: #FFF;
-  font-family: Inter;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-size: 42px;
   font-style: normal;
   font-weight: 500;
@@ -13,7 +13,6 @@
   .profile__name {
     font-size: 42px;
     max-width: 294px;
-    height: 39px;
   }
 }
 

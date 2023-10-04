@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
+  <script defer src="index.js"></script>
   <title>Mesto</title>
 </head>
 <body class="body">
@@ -28,15 +29,23 @@
         <button class="profile_add"></button>
       </section>
       <section class="gallery">
-        <div class="gallery__item">
+        <template class="template-item">
+          <div class="gallery__item">
           <img src="./images/Karachaevsk.jpg" alt="Карачаевск" class="gallery__image">
+          <button class="gallery__trash">
+            <img src="./images/Trash.svg" alt="Удалить картинку">
+          </button>
           <div class="gallery__description">
             <h2 class="gallery__header">Карачаевск</h2>
             <button class="gallery__button"></button>
           </div>
         </div>
+        </template>
         <div class="gallery__item">
           <img src="./images/Elbrus.png" alt="Гора Эльбрус" class="gallery__image">
+          <button class="gallery__trash">
+            <img src="./images/Trash.svg" alt="Удалить картинку">
+          </button>
           <div class="gallery__description">
             <h2 class="gallery__header">Гора Эльбрус</h2>
             <button class="gallery__button"></button>
@@ -44,6 +53,9 @@
         </div>
         <div class="gallery__item">
           <img src="./images/Dombai.png" alt="Домбай" class="gallery__image">
+          <button class="gallery__trash">
+            <img src="./images/Trash.svg" alt="Удалить картинку">
+          </button>
           <div class="gallery__description">
             <h2 class="gallery__header">Домбай</h2>
             <button class="gallery__button"></button>
@@ -51,6 +63,9 @@
         </div>
         <div class="gallery__item">
           <img src="./images/Elbrus.png" alt="Гора Эльбрус" class="gallery__image">
+          <button class="gallery__trash">
+            <img src="./images/Trash.svg" alt="Удалить картинку">
+          </button>
           <div class="gallery__description">
             <h2 class="gallery__header">Гора Эльбрус</h2>
             <button class="gallery__button"></button>
@@ -58,6 +73,9 @@
         </div>
         <div class="gallery__item">
           <img src="./images/Dombai.png" alt="Домбай" class="gallery__image">
+          <button class="gallery__trash">
+            <img src="./images/Trash.svg" alt="Удалить картинку">
+          </button>
           <div class="gallery__description">
             <h2 class="gallery__header">Домбай</h2>
             <button class="gallery__button"></button>
@@ -65,6 +83,9 @@
         </div>
         <div class="gallery__item">
           <img src="./images/Karachaevsk.jpg" alt="Карачаево Черкессия" class="gallery__image">
+          <button class="gallery__trash">
+            <img src="./images/Trash.svg" alt="Удалить картинку">
+          </button>
           <div class="gallery__description">
             <h2 class="gallery__header">Карачаево Черкессия</h2>
             <button class="gallery__button"></button>
@@ -77,7 +98,7 @@
         &copy; 2023 Mesto Russia
       </p>
     </footer>
-    <section class="popup popup_opened">
+    <section class="popup">
       <form class="popup__container" action="#">
        <button class="popup__close"></button>
        <h2 class="popup__header">Редактировать профиль</h2>

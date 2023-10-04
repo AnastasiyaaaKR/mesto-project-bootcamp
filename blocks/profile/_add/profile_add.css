@@ -7,7 +7,7 @@
   border: 2px solid #FFF;
   margin: 75px 0 0;
   cursor: pointer;
-  background-color: #000;
+  background-color: transparent;
   background-image: url(../../../images/Add_Button.svg);
   background-repeat: no-repeat;
   background-position: center;
