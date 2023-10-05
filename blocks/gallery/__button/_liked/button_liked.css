@@ -1,0 +1,7 @@
+.gallery__button_liked {
+  background-image: url(../../../../images/like_active.svg);
+}
+
+.gallery__button_liked:hover {
+  opacity: 0,5;
+}
