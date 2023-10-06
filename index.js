@@ -31,6 +31,14 @@ buttonClosePopup.addEventListener('click', () => closePopup(popupProfile));
 addButton.addEventListener('click', () => showPopup(popupPlace));
 buttonClosePopup.addEventListener('click', () => closePopup(popupPlace));
 
+function deliteCard(evt) {
+  evt.target.closest('.gallery__item').remove();
+}
+
+function likeCard(evt) {
+  evt.target.closest('.gallery__button').classList.toggle('gallery__button_liked');
+}
+
 function createGalleryItem(galleryName, galleryPhoto) {
   const newGalleryItem = templateItem.cloneNode(true);
   const galleryHeader = newGalleryItem.querySelector('.gallery__header');
@@ -38,13 +46,9 @@ function createGalleryItem(galleryName, galleryPhoto) {
   const galleryImage = newGalleryItem.querySelector('.gallery__image');
   galleryImage.src = galleryPhoto;
   const galleryDeliteButton = newGalleryItem.querySelector('.gallery__trash');
-  galleryDeliteButton.addEventListener('click', () => {
-    newGalleryItem.remove();
-  })
+  galleryDeliteButton.addEventListener('click', deliteCard)
   const likeButton = newGalleryItem.querySelector('.gallery__button');
-  likeButton.addEventListener('click', () => {
-    likeButton.classList.add('gallery__button_liked');
-  });
+  likeButton.addEventListener('click', likeCard)
   return newGalleryItem;
 }
 
