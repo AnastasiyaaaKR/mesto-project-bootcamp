@@ -1,20 +1,19 @@
 const editButton = document.querySelector('.profile__edit');
 const addButton = document.querySelector('.profile_add');
 const popup = document.querySelector('.popup');
-const popupProfile = document.querySelector('.popup__profile')
+const popupProfile = document.querySelector('.popup__profile');
+const popupName = popupProfile.querySelector('.popup__name');
+const popupAbout = popupProfile.querySelector('.popup__about');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__cuption');
 const popupPlace = document.querySelector('.popup__place');
 const placeTitleInput = popupPlace.querySelector('.place__title');
 const placeLinkInput = popupPlace.querySelector('.place__link');
 const buttonClosePopup = popup.querySelector('.popup__close');
-const popupName = popup.querySelector('.popup__name');
-const popupAbout = popup.querySelector('.popup__about');
-const likeButton = document.querySelector('.gallery__button');
 const templateItem = document.querySelector('.template-item').content.querySelector('.gallery__item');
 const gallerySection = document.querySelector('.gallery');
-const profileForm = document.querySelector('.profile__form');
-const placeForm = document.querySelector('.place__form');
+const profileForm = document.forms.profileForm;
+const placeForm = document.forms.placeForm;
 
 popupName.value = profileName.textContent;
 popupAbout.value = profileAbout.textContent;
@@ -38,17 +37,20 @@ function createGalleryItem(galleryName, galleryPhoto) {
   galleryHeader.textContent = galleryName;
   const galleryImage = newGalleryItem.querySelector('.gallery__image');
   galleryImage.src = galleryPhoto;
+  const galleryDeliteButton = newGalleryItem.querySelector('.gallery__trash');
+  galleryDeliteButton.addEventListener('click', () => {
+    newGalleryItem.remove();
+  })
+  const likeButton = newGalleryItem.querySelector('.gallery__button');
+  likeButton.addEventListener('click', () => {
+    likeButton.classList.add('gallery__button_liked');
+  });
   return newGalleryItem;
 }
 
 function addCard(element) {
   gallerySection.prepend(element);
 }
-
-// function LikePhoto () {
-// likeButton.classList.add('gallery__button_liked');
-// }
-// likeButton.addEventListener('click', LikePhoto);
 
 const initialCards = [
   {
