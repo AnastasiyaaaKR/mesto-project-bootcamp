@@ -9,30 +9,37 @@ const profileAbout = document.querySelector('.profile__cuption');
 const popupPlace = document.querySelector('.popup__place');
 const placeTitleInput = popupPlace.querySelector('.place__title');
 const placeLinkInput = popupPlace.querySelector('.place__link');
-const buttonClosePopup = popup.querySelector('.popup__close');
+const buttonsClosePopup = document.querySelectorAll('.popup__close');
 const templateItem = document.querySelector('.template-item').content.querySelector('.gallery__item');
 const gallerySection = document.querySelector('.gallery');
+const popupPhoto = document.querySelector('popup__photo');
 const profileForm = document.forms.profileForm;
 const placeForm = document.forms.placeForm;
-
-popupName.value = profileName.textContent;
-popupAbout.value = profileAbout.textContent;
 
 function showPopup (popup) {
   popup.classList.add('popup_opened');
 }
 
-function closePopup(popup) {
+function closePopup(evt) {
+  evt.preventDefault();
+  const popup = evt.target.closest('.popup');
   popup.classList.remove('popup_opened');
 }
 
-editButton.addEventListener('click', () => showPopup(popupProfile));
-buttonClosePopup.addEventListener('click', () => closePopup(popupProfile));
-addButton.addEventListener('click', () => showPopup(popupPlace));
-buttonClosePopup.addEventListener('click', () => closePopup(popupPlace));
+for(const button of buttonsClosePopup) {
+  button.addEventListener('click', (evt) =>  closePopup((evt)));
+}
 
-function deliteCard(evt) {
-  evt.target.closest('.gallery__item').remove();
+editButton.addEventListener('click', () => {
+  popupName.value = profileName.textContent;
+  popupAbout.value = profileAbout.textContent;
+  showPopup(popupProfile);
+});
+
+addButton.addEventListener('click', () => showPopup(popupPlace));
+
+function deliteCard(item) {
+  item.remove();
 }
 
 function likeCard(evt) {
@@ -46,7 +53,7 @@ function createGalleryItem(galleryName, galleryPhoto) {
   const galleryImage = newGalleryItem.querySelector('.gallery__image');
   galleryImage.src = galleryPhoto;
   const galleryDeliteButton = newGalleryItem.querySelector('.gallery__trash');
-  galleryDeliteButton.addEventListener('click', deliteCard)
+  galleryDeliteButton.addEventListener('click', () => deliteCard(newGalleryItem))
   const likeButton = newGalleryItem.querySelector('.gallery__button');
   likeButton.addEventListener('click', likeCard)
   return newGalleryItem;
@@ -91,13 +98,15 @@ function handleFormSubmitProfile(evt) {
   evt.preventDefault(); 
   profileName.textContent = popupName.value;
   profileAbout.textContent = popupAbout.value;
-  closePopup(popupProfile)
+  closePopup(evt);
 }
 
 function handleFormSubmitNewPlace(evt) {
   evt.preventDefault(); 
   addCard(createGalleryItem(placeTitleInput.value, placeLinkInput.value))
   closePopup(popupPlace)
+  placeTitleInput.value = '';
+  placeLinkInput.value = '';
 }
 
 profileForm.addEventListener('submit', handleFormSubmitProfile);
