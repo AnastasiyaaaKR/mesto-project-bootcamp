@@ -56,11 +56,13 @@ function createGalleryItem(galleryName, galleryPhoto) {
   galleryDeliteButton.addEventListener('click', () => deliteCard(newGalleryItem))
   const likeButton = newGalleryItem.querySelector('.gallery__button');
   likeButton.addEventListener('click', likeCard);
+  galleryImage.addEventListener('click', () => {
   const popupPhotoContent = document.querySelector('.popup__photo-content');
   popupPhotoContent.src = galleryImage.src;
   const popupPhotoName = document.querySelector('.popup__photo-name');
   popupPhotoName.textContent = galleryHeader.textContent;
-  galleryImage.addEventListener('click', () => showPopup(popupPhoto));
+  showPopup(popupPhoto)
+  });
   return newGalleryItem;
 }
 
