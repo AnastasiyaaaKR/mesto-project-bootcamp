@@ -12,7 +12,7 @@ const placeLinkInput = popupPlace.querySelector('.place__link');
 const buttonsClosePopup = document.querySelectorAll('.popup__close');
 const templateItem = document.querySelector('.template-item').content.querySelector('.gallery__item');
 const gallerySection = document.querySelector('.gallery');
-const popupPhoto = document.querySelector('popup__photo');
+const popupPhoto = document.querySelector('.popup__photo');
 const profileForm = document.forms.profileForm;
 const placeForm = document.forms.placeForm;
 
@@ -55,7 +55,14 @@ function createGalleryItem(galleryName, galleryPhoto) {
   const galleryDeliteButton = newGalleryItem.querySelector('.gallery__trash');
   galleryDeliteButton.addEventListener('click', () => deliteCard(newGalleryItem))
   const likeButton = newGalleryItem.querySelector('.gallery__button');
-  likeButton.addEventListener('click', likeCard)
+  likeButton.addEventListener('click', likeCard);
+  galleryImage.addEventListener('click', () => {
+    const popupPhotoContent = document.querySelector('.popup__photo-content');
+    popupPhotoContent.src = galleryImage.src;
+    const popupPhotoName = document.querySelector('.popup__photo-name');
+    popupPhotoName.textContent = galleryHeader.textContent;
+    showPopup(popupPhoto)
+  });
   return newGalleryItem;
 }
 
