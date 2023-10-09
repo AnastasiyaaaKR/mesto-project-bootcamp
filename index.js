@@ -56,13 +56,11 @@ function createGalleryItem(galleryName, galleryPhoto) {
   galleryDeliteButton.addEventListener('click', () => deliteCard(newGalleryItem))
   const likeButton = newGalleryItem.querySelector('.gallery__button');
   likeButton.addEventListener('click', likeCard);
-  galleryImage.addEventListener('click', () => {
-    const popupPhotoContent = document.querySelector('.popup__photo-content');
-    popupPhotoContent.src = galleryImage.src;
-    const popupPhotoName = document.querySelector('.popup__photo-name');
-    popupPhotoName.textContent = galleryHeader.textContent;
-    showPopup(popupPhoto)
-  });
+  const popupPhotoContent = document.querySelector('.popup__photo-content');
+  popupPhotoContent.src = galleryImage.src;
+  const popupPhotoName = document.querySelector('.popup__photo-name');
+  popupPhotoName.textContent = galleryHeader.textContent;
+  galleryImage.addEventListener('click', () => showPopup(popupPhoto));
   return newGalleryItem;
 }
 
@@ -102,7 +100,7 @@ initialCards.forEach(obj => {
 })
 
 function handleFormSubmitProfile(evt) {
-  evt.preventDefault(); 
+  evt.preventDefault();
   profileName.textContent = popupName.value;
   profileAbout.textContent = popupAbout.value;
   closePopup(evt);
@@ -110,8 +108,8 @@ function handleFormSubmitProfile(evt) {
 
 function handleFormSubmitNewPlace(evt) {
   evt.preventDefault(); 
-  addCard(createGalleryItem(placeTitleInput.value, placeLinkInput.value))
-  closePopup(popupPlace)
+  addCard(createGalleryItem(placeTitleInput.value, placeLinkInput.value));
+  closePopup(evt);
   placeTitleInput.value = '';
   placeLinkInput.value = '';
 }
