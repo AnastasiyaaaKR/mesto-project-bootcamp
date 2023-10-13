@@ -125,19 +125,19 @@ placeForm.addEventListener('submit', handleFormSubmitNewPlace);
 
 //код для форм
 
-function showErorMessage(input, errorMessage) {
+function showErorMessage(input, errorMessage) { //показываем сообщение об ошибке
   const spanField = 'eror-' + input.id;
   const erorElement = document.getElementById(spanField);
   erorElement.textContent = errorMessage;
 }
 
-function hideErrorMessage(input) {
+function hideErrorMessage(input) { //скрываем сообщение об ошибке
   const spanField = 'eror-' + input.id;
   const erorElement = document.getElementById(spanField);
   erorElement.textContent = '';
 }
 
-function checkFieldValidity(input) {
+function checkFieldValidity(input) { // проверяем валидность инпута
     if (input.validity.valid) {
     hideErrorMessage(input);
   } else {
@@ -153,7 +153,7 @@ function turnOntheSubmitButton(button) { //делаем кнопку актив�
   button.disabled = false;
 }
 
-function checkFormValidity(form, buttons) {
+function checkFormValidity(form, buttons) { //проверяем валидацию всей формы целиком
   buttons.forEach(button => {
     if(form.checkValidity()) {
       turnOntheSubmitButton(button);
@@ -162,7 +162,6 @@ function checkFormValidity(form, buttons) {
   }
   })
 }
-
 
 checkFormValidity(profileForm, Submitbuttons);
 
