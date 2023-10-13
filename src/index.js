@@ -1,3 +1,4 @@
+import './../pages/index.css';
 const editButton = document.querySelector('.profile__edit');
 const addButton = document.querySelector('.profile_add');
 const popup = document.querySelector('.popup');
@@ -117,7 +118,7 @@ function handleFormSubmitNewPlace(evt) {
   evt.preventDefault(); 
   addCard(createGalleryItem(placeTitleInput.value, placeLinkInput.value));
   closePopup(evt);
-  evt.target.reset()
+  evt.target.reset();
 }
 
 profileForm.addEventListener('submit', handleFormSubmitProfile);
