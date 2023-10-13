@@ -20,6 +20,10 @@
   background-color: rgb(0, 0, 0, 0.8)
 }
 
+.popup__button:disabled {
+  background: #F6F6F6;
+}
+
 @media screen and (max-width: 600px) {
   .popup__button {
     max-width: 238px;

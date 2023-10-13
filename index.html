@@ -29,15 +29,6 @@
         <button class="profile_add"></button>
       </section>
       <section class="gallery">
-        <!-- <div class="gallery__item">
-          <img src="./images/Elbrus.png" alt="Гора Эльбрус" class="gallery__image">
-          <button class="gallery__trash">
-            <img src="./images/Trash.svg" alt="Удалить картинку">
-          </button>
-          <div class="gallery__description">
-            <h2 class="gallery__header">Гора Эльбрус</h2>
-            <button class="gallery__button"></button>
-        </div> -->
       </section>
     </main>
     <footer class="footer">
@@ -46,20 +37,60 @@
       </p>
     </footer>
     <section class="popup popup__profile">
-      <form class="popup__container" name='profileForm' action="#">
+      <form class="popup__container" 
+      name='profileForm' 
+      action="#" 
+      novalidate
+      method="post"
+      >
        <button class="popup__close"></button>
        <h2 class="popup__header ">Редактировать профиль</h2>
-       <input class="popup__text popup__name" required type="text" placeholder="Имя">
-       <input class="popup__text popup__about" required type="text" placeholder="О себе">
+       <input class="popup__text popup__name" 
+       id="name"
+       required 
+       type="text" 
+       placeholder="Имя" 
+       minlength="2" 
+       maxlength="40"
+       >
+       <span id="eror-name" class="popup__error-message"></span>
+       <input class="popup__text popup__about" 
+       id="about"
+       required 
+       type="text" 
+       placeholder="О себе"
+       minlength="2" 
+       maxlength="200"
+       >
+       <span id="eror-about" class="popup__error-message"></span>
        <button class="popup__button" type="submit">Сохранить</button>
       </form>
     </section>
     <section class="popup popup__place">
-      <form class="popup__container" name='placeForm' action="#">
+      <form class="popup__container" 
+      name='placeForm' 
+      action="#" 
+      novalidate
+      method="post"
+      >
        <button class="popup__close"></button>
        <h2 class="popup__header">Новое место</h2>
-       <input class="popup__text place__title" required type="text" placeholder="Назание">
-       <input class="popup__text place__link" required type="text" placeholder="Ссылка на картинку">
+       <input class="popup__text place__title"
+       id="place"
+       required
+       type="text"
+       placeholder="Назание"
+       minlength="2"
+       maxlength="30"
+       >
+       <span id="eror-place" class="popup__error-message"></span>
+       <input class="popup__text place__link"
+       id="place-link"
+       required
+       type="url"
+       placeholder="Ссылка на картинку"
+       >
+       <span id="eror-place-link" class="popup__error-message"></span>
        <button class="popup__button" type="submit">Создать</button>
       </form>
     </section>
