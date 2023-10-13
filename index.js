@@ -15,10 +15,12 @@ const gallerySection = document.querySelector('.gallery');
 const popupPhoto = document.querySelector('.popup__photo');
 const popupPhotoContent = document.querySelector('.popup__photo-content');
 const popupPhotoName = document.querySelector('.popup__photo-name');
-const buttonSubmit = document.querySelector('.popup__button') //кнопка сабмита
+const Submitbuttons = popup.querySelectorAll('.popup__button') //кнопка сабмита
 const profileForm = document.forms.profileForm; //форма профиля
 const placeForm = document.forms.placeForm; //форма карточки
-const inputFields = profileForm.querySelectorAll('.popup__text'); //вытаскиваю все инпуты из попапа профиля
+const popupForms = document.querySelectorAll('.popup__container'); //вытаскиваю все формы попапа
+const inputFields = document.querySelectorAll('.popup__text'); //вытаскиваю все инпуты из попапа 
+
 
 function showPopup (popup) {
   popup.classList.add('popup_opened');
@@ -143,33 +145,36 @@ function checkFieldValidity(input) {
   }
 }
 
-// function handleFormSubmitForm() {
-//   const inputField = popupName;
-// }
-// profileForm.addEventListener('submit', handleFormSubmitForm);
-
 function turnOfftheSubmitButton (button) { //делаем кнопку неактивной
   button.disabled = true;
 }
 
-function turnOntheSubmitButton(button) {
+function turnOntheSubmitButton(button) { //делаем кнопку активной
   button.disabled = false;
 }
 
-function checkFormValidity(form, button) {
-  if(form.checkValidity()) {
-  turnOntheSubmitButton(button)
+function checkFormValidity(form, buttons) {
+  buttons.forEach(button => {
+    if(form.checkValidity()) {
+      turnOntheSubmitButton(button);
   } else {
-  turnOfftheSubmitButton(button)
+    turnOfftheSubmitButton(button);
   }
+  })
 }
 
-checkFormValidity(profileForm, buttonSubmit);
 
-inputFields.forEach(input => {
-  input.addEventListener('input', () => {
-    checkFormValidity(profileForm, buttonSubmit);
-    checkFieldValidity(input)
+checkFormValidity(profileForm, Submitbuttons);
+
+popupForms.forEach(form => {
+    inputFields.forEach(input => {
+      input.addEventListener('input', () => {
+      checkFormValidity(form, Submitbuttons);
+      checkFieldValidity(input)
+    })
   })
 });
+
+
+
 
