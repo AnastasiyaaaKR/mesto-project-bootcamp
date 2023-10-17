@@ -8,12 +8,12 @@
 <body class="body">
   <div class="wrapper">
     <header class="header">
-      <img src="./../images/logo.svg" alt="Логитип место" class="header__logo">
+      <img src="<%=require('./images/logo.svg')%>" alt="Логитип место" class="header__logo">
     </header>
     <main class="main">
       <section class="profile">
         <div class="profile__info">
-          <img src="./../images/profile__image.jpg" alt="Аватарка" class="profile__img">
+          <img src="<%=require('./images/profile__image.jpg')%>" alt="Аватарка" class="profile__img">
           <div class="profile__about">
             <div>
               <div class="profile__name-wrapper">
@@ -103,7 +103,7 @@
       <div class="gallery__item">
         <img src="#" alt="" class="gallery__image">
         <button class="gallery__trash">
-          <img src="./../images/Trash.svg" alt="Удалить картинку">
+          <img src="<%=require('./images/Trash.svg')%>" alt="Удалить картинку">
         </button>
         <div class="gallery__description">
           <h2 class="gallery__header">Карачаевск</h2>
