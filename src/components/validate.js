@@ -1,3 +1,5 @@
+import { validationSettings } from './../index.js';
+
 function showErorMessage(input, errorMessage) { 
   const spanField = 'eror-' + input.id;
   const erorElement = document.getElementById(spanField);
@@ -34,4 +36,17 @@ function checkFormValidity(form, button) {
   }
 }
 
-export { checkFieldValidity, checkFormValidity }; 
+function enableValidation(popupForms, validationSettings) {
+  popupForms.forEach(form => {
+    const formsInputs = form.querySelectorAll(validationSettings.inputSelector);
+    const formButton = form.querySelector(validationSettings.buttonSelector);
+      formsInputs.forEach(input => {
+        input.addEventListener('input', () => {
+        checkFormValidity(form, formButton);
+        checkFieldValidity(input);
+      })
+    })
+  });
+}
+
+export { checkFieldValidity, checkFormValidity, enableValidation }; 

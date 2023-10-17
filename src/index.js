@@ -1,13 +1,13 @@
 import './pages/index.css';
-import { checkFieldValidity, checkFormValidity } from './components/validate.js'; 
+import { checkFieldValidity, checkFormValidity, enableValidation} from './components/validate.js'; 
 import { createGalleryItem, addCard, initialCards} from './components/card.js';
 import {showPopup, closePopup} from './components/modal.js';
 
 const editButton = document.querySelector('.profile__edit');
 const addButton = document.querySelector('.profile_add');
 const popupProfile = document.querySelector('.popup__profile');
-const popupName = popupProfile.querySelector('.popup__name'); //Имя пользователя
-const popupAbout = popupProfile.querySelector('.popup__about'); //О себе
+const popupName = popupProfile.querySelector('.popup__name');
+const popupAbout = popupProfile.querySelector('.popup__about');
 const profileName = document.querySelector('.profile__name'); 
 const profileAbout = document.querySelector('.profile__cuption');
 const popupPlace = document.querySelector('.popup__place');
@@ -23,6 +23,11 @@ const profileForm = document.forms.profileForm;
 const placeForm = document.forms.placeForm;
 const popupForms = document.querySelectorAll('.popup__container');
 const popups = document.querySelectorAll('.popup');
+
+const validationSettings = {
+  inputSelector: '.popup__text',
+  buttonSelector: '.popup__button',
+}; 
 
 ClosePopupbuttons.forEach((button) => {
   const popup = button.closest('.popup');
@@ -46,7 +51,6 @@ initialCards.forEach(obj => {
 })
 
 function handleFormSubmitProfile(evt) {
-  console.log('handleFormSubmitProfile')
   evt.preventDefault();
   profileName.textContent = popupName.value;
   profileAbout.textContent = popupAbout.value;
@@ -70,17 +74,6 @@ popupForms.forEach(form => {
   checkFormValidity(form, formButton);
 })
 
-popupForms.forEach(form => {
-  const formsInputs = form.querySelectorAll('.popup__text');
-  const formButton = form.querySelector('.popup__button');
-  formsInputs.forEach(input => {
-    input.addEventListener('input', () => {
-    checkFormValidity(form, formButton);
-    checkFieldValidity(input);
-  })
-})
-});
-
 popups.forEach(popup => {
   popup.addEventListener("mousedown", (evt) => {
     if(evt.target.classList.contains('popup')) {
@@ -89,4 +82,6 @@ popups.forEach(popup => {
   });
 });
 
-export { templateItem, gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, editButton, addButton, ClosePopupbuttons}
+enableValidation(popupForms, validationSettings);
+
+export { templateItem, gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, editButton, addButton, ClosePopupbuttons, validationSettings}
