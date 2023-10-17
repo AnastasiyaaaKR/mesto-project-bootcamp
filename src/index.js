@@ -22,6 +22,7 @@ const popupPhotoName = document.querySelector('.popup__photo-name');
 const profileForm = document.forms.profileForm; 
 const placeForm = document.forms.placeForm;
 const popupForms = document.querySelectorAll('.popup__container');
+const popups = document.querySelectorAll('.popup');
 
 ClosePopupbuttons.forEach((button) => {
   const popup = button.closest('.popup');
@@ -78,6 +79,14 @@ popupForms.forEach(form => {
     checkFieldValidity(input);
   })
 })
+});
+
+popups.forEach(popup => {
+  popup.addEventListener("mousedown", (evt) => {
+    if(evt.target.classList.contains('popup')) {
+      closePopup(popup);
+    }
+  });
 });
 
 export { templateItem, gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, editButton, addButton, ClosePopupbuttons}
