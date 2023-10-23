@@ -49,4 +49,4 @@ function enableValidation(popupForms, validationSettings) {
   });
 }
 
-export { checkFieldValidity, checkFormValidity, enableValidation }; 
+export { checkFieldValidity, checkFormValidity, enableValidation, turnOfftheSubmitButton }; 

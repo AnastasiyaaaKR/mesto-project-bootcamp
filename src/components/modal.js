@@ -1,4 +1,4 @@
-import {editButton, addButton, ClosePopupbuttons, popups } from './../index.js'
+import {editButton, addButton, closePopupbuttons, popups } from './../index.js'
 
 function showPopup (popup) {
   popup.classList.add('popup_opened');

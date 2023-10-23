@@ -1,4 +1,5 @@
 import { templateItem, gallerySection, popupPhoto, popupPhotoContent, popupPhotoName} from './../index.js'
+import { showPopup } from './modal.js';
 
 function deliteCard(item) {
   item.remove();
@@ -21,6 +22,7 @@ function createGalleryItem(galleryName, galleryPhoto) {
   likeButton.addEventListener('click', likeCard);
   galleryImage.addEventListener('click', () => {
   popupPhotoContent.src = galleryImage.src;
+  popupPhotoContent.alt = galleryImage.alt;
   popupPhotoName.textContent = galleryHeader.textContent;
   showPopup(popupPhoto)
   });

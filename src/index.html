@@ -35,62 +35,66 @@
       </p>
     </footer>
     <section class="popup popup__profile">
-      <form class="popup__container" 
-      name='profileForm' 
-      action="#" 
-      novalidate
-      method="post"
-      >
-       <button type="button" class="popup__close"></button>
-       <h2 class="popup__header ">Редактировать профиль</h2>
-       <input class="popup__text popup__name" 
-       id="name"
-       required 
-       type="text" 
-       placeholder="Имя" 
-       minlength="2" 
-       maxlength="40"
-       >
-       <span id="eror-name" class="popup__error-message"></span>
-       <input class="popup__text popup__about" 
-       id="about"
-       required 
-       type="text" 
-       placeholder="О себе"
-       minlength="2" 
-       maxlength="200"
-       >
-       <span id="eror-about" class="popup__error-message"></span>
-       <button class="popup__button" type="submit">Сохранить</button>
-      </form>
+      <div class="popup__wrapper">
+        <button type="button" class="popup__close"></button>
+        <form class="popup__container" 
+        name='profileForm' 
+        action="#" 
+        novalidate
+        method="post"
+        >
+        <h2 class="popup__header ">Редактировать профиль</h2>
+        <input class="popup__text popup__name" 
+        id="name"
+        required 
+        type="text" 
+        placeholder="Имя" 
+        minlength="2" 
+        maxlength="40"
+        >
+        <span id="eror-name" class="popup__error-message"></span>
+        <input class="popup__text popup__about" 
+        id="about"
+        required 
+        type="text" 
+        placeholder="О себе"
+        minlength="2" 
+        maxlength="200"
+        >
+        <span id="eror-about" class="popup__error-message"></span>
+        <button class="popup__button" type="submit">Сохранить</button>
+        </form>
+      </div>
     </section>
     <section class="popup popup__place">
-      <form class="popup__container" 
-      name='placeForm' 
-      action="#" 
-      novalidate
-      method="post"
-      >
-       <button class="popup__close"></button>
-       <h2 class="popup__header">Новое место</h2>
-       <input class="popup__text place__title"
-       id="place"
-       required
-       type="text"
-       placeholder="Назание"
-       minlength="2"
-       maxlength="30"
-       >
-       <span id="eror-place" class="popup__error-message"></span>
-       <input class="popup__text place__link"
-       id="place-link"
-       required
-       type="url"
-       placeholder="Ссылка на картинку"
-       >
-       <span id="eror-place-link" class="popup__error-message"></span>
-       <button class="popup__button" type="submit">Создать</button>
-      </form>
+      <div class="popup__wrapper">
+        <button class="popup__close"></button>
+        <form class="popup__container" 
+        name='placeForm' 
+        action="#"
+        novalidate
+        method="post"
+        >
+        <h2 class="popup__header">Новое место</h2>
+        <input class="popup__text place__title"
+        id="place"
+        required
+        type="text"
+        placeholder="Назание"
+        minlength="2"
+        maxlength="30"
+        >
+        <span id="eror-place" class="popup__error-message"></span>
+        <input class="popup__text place__link"
+        id="place-link"
+        required
+        type="url"
+        placeholder="Ссылка на картинку"
+        >
+        <span id="eror-place-link" class="popup__error-message"></span>
+        <button class="popup__button" type="submit">Создать</button>
+        </form>
+      </div>
     </section>
     <section class="popup popup__photo">
       <div class="popup__photo-container">
