@@ -13,7 +13,10 @@
     <main class="main">
       <section class="profile">
         <div class="profile__info">
-          <img src="<%=require('./images/profile__image.jpg')%>" alt="Аватарка" class="profile__img">
+            <button class="profile__avatar-button">
+              <img src="<%=require('./images/profile__image.jpg')%>" alt="Аватарка" class="profile__img">
+              <div class="profile__pencil"></div>
+            </button>
           <div class="profile__about">
             <div>
               <div class="profile__name-wrapper">
@@ -68,7 +71,7 @@
     </section>
     <section class="popup popup__place">
       <div class="popup__wrapper">
-        <button class="popup__close"></button>
+        <button type="button" class="popup__close"></button>
         <form class="popup__container" 
         name='placeForm' 
         action="#"
@@ -101,6 +104,27 @@
          <button class="popup__close"></button>
         <img class="popup__photo-content">
         <p class="popup__photo-name"></p>
+      </div>
+    </section>
+    <section class="popup popup__avatar">
+      <div class="popup__wrapper">
+        <button class="popup__close"></button>
+        <form class="popup__container" 
+        name='avatarForm' 
+        action="#"
+        novalidate
+        method="post"
+        >
+        <h2 class="popup__header">Обновить аватар</h2>
+        <input class="popup__text avatar__link"
+        id="avatar-link"
+        required
+        type="url"
+        placeholder="Ссылка на картинку"
+        >
+        <span id="eror-avatar-link" class="popup__error-message"></span>
+        <button class="popup__button" type="submit">Соxранить</button>
+        </form>
       </div>
     </section>
     <template class="template-item">

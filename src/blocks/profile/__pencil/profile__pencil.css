@@ -1,0 +1,19 @@
+.profile__pencil {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-image: url(./../../../images/Vector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.80);
+  transition: 0.3s;
+}
+
+.profile__pencil:hover {
+  opacity: 1;
+}

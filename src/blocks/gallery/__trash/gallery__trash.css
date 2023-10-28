@@ -9,6 +9,10 @@
   cursor: pointer;
 }
 
+.gallery__trash:disabled {
+  display: none;
+}
+
 .gallery__trash:hover {
   opacity: 0.6;
 }

@@ -1,0 +1,18 @@
+.profile__avatar-button {
+  position: relative;
+  border: none;
+  padding: 0;
+  background-color: #000;
+  margin: 40px 0 0 0;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px) {
+  .profile__avatar-button {
+    margin: 40px auto 0;
+  }
+}
+
+
+
