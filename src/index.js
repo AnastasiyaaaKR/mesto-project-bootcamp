@@ -158,7 +158,7 @@ function isCardLiked(user, card) {
       return true;
     }
   }
-  return false;
+  return false
 }
 
 function isOwnerCard(user, card) {
