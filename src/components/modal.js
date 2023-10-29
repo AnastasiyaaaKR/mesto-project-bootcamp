@@ -1,5 +1,3 @@
-import {editButton, addButton, closePopupbuttons, popups } from './../index.js'
-
 function showPopup (popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closeByEsc);

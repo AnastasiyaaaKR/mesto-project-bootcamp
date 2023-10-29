@@ -1,6 +1,6 @@
 import './pages/index.css';
 import { checkFormValidity, enableValidation, turnOfftheSubmitButton } from './components/validate.js'; 
-import { createGalleryItem, addCard, deliteCard } from './components/card.js';
+import { createGalleryItem, addCard } from './components/card.js';
 import {showPopup, closePopup} from './components/modal.js';
 import { getProfileInfo, getInitialCards, changeProfile, addNewCard, showAvatar } from './components/api.js'
 
@@ -17,7 +17,6 @@ const popupPlace = document.querySelector('.popup__place');
 const placeTitleInput = popupPlace.querySelector('.place__title');
 const placeLinkInput = popupPlace.querySelector('.place__link');
 const closePopupbuttons = document.querySelectorAll('.popup__close');
-const templateItem = document.querySelector('.template-item').content.querySelector('.gallery__item');
 const gallerySection = document.querySelector('.gallery');
 const popupPhoto = document.querySelector('.popup__photo');
 const popupPhotoContent = document.querySelector('.popup__photo-content');
@@ -27,7 +26,6 @@ const placeForm = document.forms.placeForm;
 const popupForms = document.querySelectorAll('.popup__container');
 const popups = document.querySelectorAll('.popup');
 const placeSubmitButton = popupPlace.querySelector('.popup__button');
-
 const changeAvatarButton = document.querySelector('.profile__avatar-button');
 const popupAvatar = document.querySelector('.popup__avatar');
 const avatarForm = document.forms.avatarForm;
@@ -42,7 +40,6 @@ const validationSettings = {
 closePopupbuttons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', (evt) => {
-    evt.preventDefault()
     closePopup(popup)
   });
 });
@@ -54,7 +51,7 @@ editButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => showPopup(popupPlace));
-changeAvatarButton.addEventListener('click', () => showPopup(popupAvatar))
+changeAvatarButton.addEventListener('click', () => showPopup(popupAvatar));
 
 function handleFormSubmitProfile(evt) {
   evt.preventDefault();
@@ -69,7 +66,10 @@ function handleFormSubmitProfile(evt) {
     })
     .catch((err) => {
       console.log(err);
-    });
+    })
+    .finally(() => {
+      profileSubmitButton.textContent = 'Создать'
+    })
 }
 
 function handleFormSubmitNewPlace(evt) {
@@ -85,9 +85,9 @@ function handleFormSubmitNewPlace(evt) {
   .catch((err) => {
       console.log(err);
     })
-  .finally(() => 
-  placeSubmitButton.textContent = 'Создать'
-  )
+  .finally(() => {
+      placeSubmitButton.textContent = 'Создать'
+  })
 }
 
 function handleFormSubmitNewAvatar(evt) {
@@ -104,9 +104,9 @@ function handleFormSubmitNewAvatar(evt) {
     .catch((err) => {
       console.log(err.status, err.mesage);
     })
-    .finally(() => 
+    .finally(() => {
       avatarSubmitButton.textContent = 'Сохранить'
-    )
+    })
 }
 
 profileForm.addEventListener('submit', handleFormSubmitProfile);
@@ -114,7 +114,7 @@ placeForm.addEventListener('submit', handleFormSubmitNewPlace);
 avatarForm.addEventListener('submit', handleFormSubmitNewAvatar);
 
 popupForms.forEach(form => {
- const formButton = form.querySelector('.popup__button');
+  const formButton = form.querySelector('.popup__button');
   checkFormValidity(form, formButton);
 })
 
@@ -125,6 +125,7 @@ popups.forEach(popup => {
     }
   });
 });
+
 
 enableValidation(popupForms, validationSettings);
 
@@ -165,4 +166,4 @@ function isOwnerCard(user, card) {
   return user._id === card.owner._id;
 }
 
-export { templateItem, gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, editButton, addButton, closePopupbuttons, validationSettings}
+export { gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, validationSettings}

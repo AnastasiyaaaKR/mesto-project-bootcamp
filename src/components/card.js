@@ -1,4 +1,4 @@
-import { templateItem, gallerySection, popupPhoto, popupPhotoContent, popupPhotoName } from './../index.js'
+import { gallerySection, popupPhoto, popupPhotoContent, popupPhotoName } from './../index.js'
 import { showPopup } from './modal.js';
 import { deliteOwnerCard, likeCard as apiLikeCard, unlikeCard as apiUnlikeCard } from './api.js'
 
@@ -44,6 +44,7 @@ function toggleCardLike (id, evt, likes) {
 }
 
 function createGalleryItem(galleryName, galleryPhoto, counterLikes, removeDisabled, id, liked) {
+  const templateItem = document.querySelector('.template-item').content.querySelector('.gallery__item');
   const newGalleryItem = templateItem.cloneNode(true);
   const galleryHeader = newGalleryItem.querySelector('.gallery__header');
   galleryHeader.textContent = galleryName;
@@ -76,4 +77,4 @@ function addCard(element) {
 }
 
 
-export { createGalleryItem, addCard, deliteCard };
+export { createGalleryItem, addCard };
