@@ -1,5 +1,3 @@
-import { validationSettings } from './../index.js';
-
 function showErorMessage(input, errorMessage) { 
   const spanField = 'eror-' + input.id;
   const erorElement = document.getElementById(spanField);

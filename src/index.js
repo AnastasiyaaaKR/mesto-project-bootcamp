@@ -60,9 +60,7 @@ function handleFormSubmitProfile(evt) {
     .then(() => {
       profileName.textContent = popupName.value;
       profileAbout.textContent = popupAbout.value;
-      if(profileForm.checkValidity()) {
-        closePopup(popupProfile)
-      }
+      closePopup(popupProfile)
     })
     .catch((err) => {
       console.log(err);
@@ -75,9 +73,9 @@ function handleFormSubmitProfile(evt) {
 function handleFormSubmitNewPlace(evt) {
   evt.preventDefault(); 
   placeSubmitButton.textContent = 'Сохранение...'
-  addCard(createGalleryItem(placeTitleInput.value, placeLinkInput.value, 0, false))
   addNewCard(placeTitleInput.value, placeLinkInput.value)
-  .then(() => {
+  .then((card) => { 
+    addCard(createGalleryItem(card, user))
     closePopup(popupPlace);
     evt.target.reset();
     turnOfftheSubmitButton(placeSubmitButton)
@@ -145,25 +143,12 @@ getProfileInfo()
 
 getInitialCards()
   .then((result) => {
-    result.forEach(res => {
-    addCard(createGalleryItem(res['name'], res['link'], res['likes'].length, !isOwnerCard(user, res), res._id, isCardLiked(user, res)));
+    result.forEach(card => {
+    addCard(createGalleryItem(card, user));
   })
   })
   .catch((err) => {
     console.log(err.status, err.mesage);
   });
 
-function isCardLiked(user, card) {
-  for(const like of card.likes) {
-    if(like._id === user._id) {
-      return true;
-    }
-  }
-  return false
-}
-
-function isOwnerCard(user, card) {
-  return user._id === card.owner._id;
-}
-
-export { gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, validationSettings}
+export { gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, validationSettings }
