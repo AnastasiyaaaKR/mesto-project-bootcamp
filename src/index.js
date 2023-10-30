@@ -115,26 +115,18 @@ enableValidation(validationSettings);
 
 let user;
 
-getProfileInfo()
-  .then((result) => {
-    profileName.textContent = result.name;
-    profileAbout.textContent = result.about;
-    profileImg.src = result.avatar;
-    user = result;
+Promise.all([getProfileInfo(), getInitialCards()])
+  .then(([info, itialCards]) => {
+    profileName.textContent = info.name;
+    profileAbout.textContent = info.about;
+    profileImg.src = info.avatar;
+    user = info;
+    itialCards.forEach(card => {
+      addCard(createGalleryItem(card, user));
+    })
   })
-  .catch((err) => {
-    console.log(err.status, err.mesage);
-  });
-
-
-getInitialCards()
-  .then((result) => {
-    result.forEach(card => {
-    addCard(createGalleryItem(card, user));
-  })
-  })
-  .catch((err) => {
-    console.log(err.status, err.mesage);
-  });
+    .catch((err) => {
+      console.log(err.status, err.mesage);
+    });
 
 export { gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, validationSettings }
