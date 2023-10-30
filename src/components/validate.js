@@ -1,20 +1,22 @@
-function showErorMessage(input, errorMessage) { 
+function showErorMessage(input, errorMessage, inputSelectorError) { 
   const spanField = 'eror-' + input.id;
   const erorElement = document.getElementById(spanField);
   erorElement.textContent = errorMessage;
+  input.classList.add(inputSelectorError);
 }
 
-function hideErrorMessage(input) {
+function hideErrorMessage(input, inputSelectorError) {
   const spanField = 'eror-' + input.id;
   const erorElement = document.getElementById(spanField);
   erorElement.textContent = '';
+  input.classList.remove(inputSelectorError);
 }
 
-function checkFieldValidity(input) {
+function checkFieldValidity(input, inputSelectorError) {
     if (input.validity.valid) {
-    hideErrorMessage(input);
+    hideErrorMessage(input, inputSelectorError);
   } else {
-    showErorMessage(input, input.validationMessage)
+    showErorMessage(input, input.validationMessage, inputSelectorError)
   }
 }
 
@@ -34,17 +36,18 @@ function checkFormValidity(form, button) {
   }
 }
 
-function enableValidation(popupForms, validationSettings) {
+function enableValidation(validationSettings) {
+  const popupForms = document.querySelectorAll(validationSettings.popupForms);
   popupForms.forEach(form => {
     const formsInputs = form.querySelectorAll(validationSettings.inputSelector);
     const formButton = form.querySelector(validationSettings.buttonSelector);
       formsInputs.forEach(input => {
         input.addEventListener('input', () => {
         checkFormValidity(form, formButton);
-        checkFieldValidity(input);
+        checkFieldValidity(input, validationSettings.inputSelectorError);
       })
     })
   });
 }
 
-export { checkFieldValidity, checkFormValidity, enableValidation, turnOfftheSubmitButton }; 
+export { checkFormValidity, enableValidation, turnOfftheSubmitButton }; 

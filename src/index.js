@@ -23,8 +23,6 @@ const popupPhotoContent = document.querySelector('.popup__photo-content');
 const popupPhotoName = document.querySelector('.popup__photo-name');
 const profileForm = document.forms.profileForm; 
 const placeForm = document.forms.placeForm;
-const popupForms = document.querySelectorAll('.popup__container');
-const popups = document.querySelectorAll('.popup');
 const placeSubmitButton = popupPlace.querySelector('.popup__button');
 const changeAvatarButton = document.querySelector('.profile__avatar-button');
 const popupAvatar = document.querySelector('.popup__avatar');
@@ -35,7 +33,9 @@ const avatarLinkInput = popupAvatar.querySelector('.avatar__link');
 const validationSettings = {
   inputSelector: '.popup__text',
   buttonSelector: '.popup__button',
-}; 
+  inputSelectorError: 'popup__text_error',
+  popupForms: '.popup__container',
+};
 
 closePopupbuttons.forEach((button) => {
   const popup = button.closest('.popup');
@@ -111,21 +111,7 @@ profileForm.addEventListener('submit', handleFormSubmitProfile);
 placeForm.addEventListener('submit', handleFormSubmitNewPlace);
 avatarForm.addEventListener('submit', handleFormSubmitNewAvatar);
 
-popupForms.forEach(form => {
-  const formButton = form.querySelector('.popup__button');
-  checkFormValidity(form, formButton);
-})
-
-popups.forEach(popup => {
-  popup.addEventListener("mousedown", (evt) => {
-    if(evt.target.classList.contains('popup')) {
-      closePopup(popup);
-    }
-  });
-});
-
-
-enableValidation(popupForms, validationSettings);
+enableValidation(validationSettings);
 
 let user;
 
