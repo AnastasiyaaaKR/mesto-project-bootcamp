@@ -1,4 +1,4 @@
-function showErorMessage(input, errorMessage, inputSelectorError) { 
+function showErrorMessage(input, errorMessage, inputSelectorError) { 
   const spanField = 'eror-' + input.id;
   const erorElement = document.getElementById(spanField);
   erorElement.textContent = errorMessage;
@@ -7,8 +7,8 @@ function showErorMessage(input, errorMessage, inputSelectorError) {
 
 function hideErrorMessage(input, inputSelectorError) {
   const spanField = 'eror-' + input.id;
-  const erorElement = document.getElementById(spanField);
-  erorElement.textContent = '';
+  const errorElement = document.getElementById(spanField);
+  errorElement.textContent = '';
   input.classList.remove(inputSelectorError);
 }
 
@@ -16,23 +16,23 @@ function checkFieldValidity(input, inputSelectorError) {
     if (input.validity.valid) {
     hideErrorMessage(input, inputSelectorError);
   } else {
-    showErorMessage(input, input.validationMessage, inputSelectorError)
+    showErrorMessage(input, input.validationMessage, inputSelectorError)
   }
 }
 
-function turnOfftheSubmitButton (button) {
+function turnOffTheSubmitButton (button) {
   button.disabled = true;
 }
 
-function turnOntheSubmitButton(button) {
+function turnOnTheSubmitButton(button) {
   button.disabled = false;
 }
 
 function checkFormValidity(form, button) {
   if(form.checkValidity()) {
-      turnOntheSubmitButton(button);
+      turnOnTheSubmitButton(button);
   } else {
-    turnOfftheSubmitButton(button);
+    turnOffTheSubmitButton(button);
   }
 }
 
@@ -50,4 +50,4 @@ function enableValidation(validationSettings) {
   });
 }
 
-export { checkFormValidity, enableValidation, turnOfftheSubmitButton }; 
+export { checkFormValidity, enableValidation, turnOffTheSubmitButton }; 

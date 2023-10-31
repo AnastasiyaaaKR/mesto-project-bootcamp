@@ -51,7 +51,7 @@ export const addNewCard = (name, link) => {
     .then(getResponseData) 
 }
 
-export const deliteOwnerCard = (cardId) => {
+export const deleteOwnerCard = (cardId) => {
   return fetch(`${config.baseUrl}/cards/${cardId}`, {
     method: 'DELETE',
     headers: config.headers

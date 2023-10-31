@@ -1,5 +1,5 @@
 import './pages/index.css';
-import { checkFormValidity, enableValidation, turnOfftheSubmitButton } from './components/validate.js'; 
+import { enableValidation, turnOffTheSubmitButton } from './components/validate.js'; 
 import { createGalleryItem, addCard } from './components/card.js';
 import {showPopup, closePopup} from './components/modal.js';
 import { getProfileInfo, getInitialCards, changeProfile, addNewCard, showAvatar } from './components/api.js'
@@ -16,7 +16,7 @@ const profileSubmitButton = popupProfile.querySelector('.popup__button');
 const popupPlace = document.querySelector('.popup__place');
 const placeTitleInput = popupPlace.querySelector('.place__title');
 const placeLinkInput = popupPlace.querySelector('.place__link');
-const closePopupbuttons = document.querySelectorAll('.popup__close');
+const closePopupButtons = document.querySelectorAll('.popup__close');
 const gallerySection = document.querySelector('.gallery');
 const popupPhoto = document.querySelector('.popup__photo');
 const popupPhotoContent = document.querySelector('.popup__photo-content');
@@ -37,7 +37,7 @@ const validationSettings = {
   popupForms: '.popup__container',
 };
 
-closePopupbuttons.forEach((button) => {
+closePopupButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', (evt) => {
     closePopup(popup)
@@ -78,7 +78,7 @@ function handleFormSubmitNewPlace(evt) {
     addCard(createGalleryItem(card, user))
     closePopup(popupPlace);
     evt.target.reset();
-    turnOfftheSubmitButton(placeSubmitButton)
+    turnOffTheSubmitButton(placeSubmitButton)
   })
   .catch((err) => {
       console.log(err);
@@ -96,7 +96,7 @@ function handleFormSubmitNewAvatar(evt) {
       profileImg.src = avatarLinkInput.value
       closePopup(popupAvatar)
       evt.target.reset()
-      turnOfftheSubmitButton(avatarSubmitButton);
+      turnOffTheSubmitButton(avatarSubmitButton);
       }
     )
     .catch((err) => {
@@ -116,17 +116,17 @@ enableValidation(validationSettings);
 let user;
 
 Promise.all([getProfileInfo(), getInitialCards()])
-  .then(([info, itialCards]) => {
+  .then(([info, initialCards]) => {
     profileName.textContent = info.name;
     profileAbout.textContent = info.about;
     profileImg.src = info.avatar;
     user = info;
-    itialCards.forEach(card => {
+    initialCards.forEach(card => {
       addCard(createGalleryItem(card, user));
     })
   })
     .catch((err) => {
-      console.log(err.status, err.mesage);
+      console.log(err.status, err.message);
     });
 
 export { gallerySection, popupPhoto, popupPhotoContent, popupPhotoName, validationSettings }

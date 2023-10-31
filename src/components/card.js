@@ -1,14 +1,14 @@
 import { gallerySection, popupPhoto, popupPhotoContent, popupPhotoName } from './../index.js'
 import { showPopup } from './modal.js';
-import { deliteOwnerCard, likeCard as apiLikeCard, unlikeCard as apiUnlikeCard } from './api.js'
+import { deleteOwnerCard, likeCard as apiLikeCard, unlikeCard as apiUnlikeCard } from './api.js'
 
-function deliteCard(id, item) {
-  deliteOwnerCard(id)
+function deleteCard(id, item) {
+  deleteOwnerCard(id)
   .then(() => {
     item.remove();
   })
 .catch((err) => {
-    console.log(err.status, err.mesage);
+    console.log(err.status, err.message);
   });
 }
 
@@ -30,7 +30,7 @@ function unlikeCard(id, evt, likes) {
       likes.textContent = card.likes.length;
     })
     .catch((err) => {
-      console.log(err.status, err.mesage);
+      console.log(err.status, err.message);
     });
 }
 
@@ -64,9 +64,9 @@ function createGalleryItem(card, user) {
   const galleryImage = newGalleryItem.querySelector('.gallery__image');
   galleryImage.src = card.link;
   galleryImage.alt = card.name;
-  const galleryDeliteButton = newGalleryItem.querySelector('.gallery__trash');
-  galleryDeliteButton.disabled = !isOwnerCard(user, card);
-  galleryDeliteButton.addEventListener('click', () => deliteCard(card._id, newGalleryItem));
+  const galleryDeleteButton = newGalleryItem.querySelector('.gallery__trash');
+  galleryDeleteButton.disabled = !isOwnerCard(user, card);
+  galleryDeleteButton.addEventListener('click', () => deleteCard(card._id, newGalleryItem));
   const likes = newGalleryItem.querySelector('.gallery__likes');
   likes.textContent = card.likes.length;
   const likeButton = newGalleryItem.querySelector('.gallery__button');
